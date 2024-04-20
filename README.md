@@ -2,6 +2,8 @@
 
 This repository contains the code for the game "Guitarist V Zombies". It is a fun and exciting game where you play as a guitarist defending yourself against hordes of zombies using the power of music.
 
+![Canvas](assets/canvas.png)
+
 ## Installation
 
 To install and run the game, follow these steps:
