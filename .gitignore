@@ -1,1 +1,10 @@
 node_modules
+
+
+
+#add all ase and aseprite files here
+assets\bg.aseprite
+assets\player.aseprite
+assets\Sprite-004.aseprite
+
+
