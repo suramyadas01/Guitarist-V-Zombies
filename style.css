@@ -10,14 +10,52 @@
     border-radius: 5px;
     margin-right: 10px;
     margin-bottom: 10px;
+    border-radius: 50px;
+    font-weight: bold;
 }
+
+
+#checkbox{
+    color: black;
+    text-align: right;
+    text-decoration: none;
+    font-style: bold;
+    float : right;
+    font-size: 20px;
+    
+}
+
+#keyboardInputLabel{
+    font-size: 24px;
+
+}
+
+h1{
+    font-size: 40px;
+    font-style: bold;
+    color: black;
+
+}
+
+
+
+#keyboardInput{
+    text-align: right;
+    text-decoration: none;
+    font-style: bold;
+    border-radius: 5px;
+    margin-right: 10px;
+    float : left;
+    size: 50px;
+    }
 
 
 .button:disabled {
     background-color: #cccccc;
 }
 .canvas {
-    width: 100%;
+    width: 1024px;
+    float: center;
     height: 0;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     position: relative;
@@ -35,12 +73,61 @@ p {
 }
 
 body{
-    padding-left: 10%;
-    padding-right: 10%;
-    background-color: burlywood;
-    vertical-align: middle;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: rgb(28, 29, 39);
+    background-color: rgb(255, 253, 234);
+    width: 100%;
+}
+
+.content{
+    width: 1024px;
+    margin: auto;
 }
 
 #b2{
     visibility: hidden;
+}
+
+p{
+    text-align: justify;
+}
+
+.socials {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#GithubBtn {
+    background-color: black;
+}
+
+#LinkedInBtn {
+    background-color: #52a5d1;
+}
+
+#InstagramBtn {
+    background-color: rgb(205, 135, 233);
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+}
+
+span{
+    font-size: 24px;
+    padding-left: 30px;
 }

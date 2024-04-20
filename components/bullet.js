@@ -24,6 +24,7 @@ class Bullet extends Sprite {
         this.collided = true;
         this.position.x = -32;
         enemies.splice(enemies.indexOf(enemy), 1);
+        score += 10;
       }
       
     });

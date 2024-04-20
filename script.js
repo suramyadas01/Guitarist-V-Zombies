@@ -4,9 +4,16 @@ const ctx = canvas.getContext('2d');
 const startButton = document.querySelector('#start');
 const b2 = document.querySelector('#b2');
 
-const freq = document.querySelector('#freq');
+const scoreDisplay = document.querySelector('#score');
+const highScoreDisplay = document.querySelector('#highScore');  
+
 var cooldown = 0;
 
+var keyboardInput = document.querySelector('#keyboardInput');
+
+
+var score = 0;
+var highScore = 0;
 
 canvas.width = 1024;
 canvas.height = 720;
@@ -112,16 +119,61 @@ function loop(){
             }
          
         });
-    
-    
-        handleInputsFromAudio(Analyzer.updateStream());
+            
+        if (!keyboardInput.checked) {
+            handleInputsFromAudio(Analyzer.updateStream());
+        } else {
+            handleInputs();
+        }
+        //keyboardInput.checked ?  handleInputsFromAudio(Analyzer.updateStream()) : handleInputs();
     
     }
+
+    if(currentGameState === gameStates[2]){
+        b2.style.visibility = 'visible';
+        ctx.fillStyle = 'black';
+        ctx.fillRect(canvas.width/2 - 150, canvas.height/2 - 50 , 300 , 100);
+        ctx.fillStyle = 'white';
+        ctx.font = '30px Sans-Serif';
+        ctx.fillText('Game Over', canvas.width/2 - 80, canvas.height/2 + 10);
+    }
+    
+    ctx.font = '30px Sans-Serif';
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, 220, 100);
+    ctx.fillStyle = 'white';
+    ctx.fillText('Score: ' + score, 20, 50);
+    ctx.fillText('High Score: ' + highScore, 20, 80);
     //console.log('animate');
 }
 
 loop();
 
+
+function drawGameOver(){
+    ctx.fillStyle = 'black';
+        ctx.fillRect(canvas.width/2 - 150, canvas.height/2 - 50 , 300 , 100);
+        ctx.fillStyle = 'white';
+        ctx.font = '30px Sans-Serif';
+        ctx.fillText('Game Over', canvas.width/2 - 80, canvas.height/2);
+        ctx.fillText('Press Reset to try again!', canvas.width/2 - 40, canvas.height/2 + 10);
+
+
+}
+
+function reset(){
+    currentGameState = gameStates[0];
+    enemies = [];
+    bullets = [];
+    startButton.disabled = false;
+    b2.disabled = true; 
+    b2.style.visibility = 'hidden'; 
+
+    if(score > highScore){
+        highScore = score;
+    }
+    score = 0;
+}
 
 function handleInputsFromAudio(note){
     if(note === 'G5' && cooldown === 0){

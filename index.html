@@ -1,18 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Webpage</title>
+    <title>GuitaristsVZombies</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Title Heading</h1>
-    <p>This is a paragraph. Lorem ipsum dolor si </p>
-    <h3 id="freq">Test</h3>
-    <button class="button" id="start" onclick="startClicked()">Start Game</button>
-    <button class="button" disabled="true" id="b2">Button 2</button>
-    <br>
-    <canvas id="canvas"></canvas>   
+    <div class="content">
+        <h1>Guitarist V Zombies (ver. 1)</h1>
+        <div>
+        <div>
+            <a href="https://github.com/suramyadas01/Guitarist-V-Zombies/" target='_blank'><button class="socials" id="GithubBtn">Github</button></a>
+            <a href="https://www.linkedin.com/in/suramyadas/" target='_blank'><button class="socials" id="LinkedInBtn">LinkedIn</button></a>
+            <a href="https://www.instagram.com/dasdalife" target='_blank'><button class="socials" id= "InstagramBtn">Instagram</button></a>
+        </div>
+        </div>
+        <p>This is a fun game where the objective is to keep the hordes of zombies at bay while playing sick tunes. Use your guitar or any other instrument to create exact notes to 
+        control your character and defeat the incoming hordes of zombies.</p>
+        <p style="color: red;">The code and techical details about this project can be found on the Github link above.</p>
+
+        <h2 style = " font-size: 30px; "><b>Controls:</b></h2>
+
+        <div>
+        <table>
+            <tr>
+                <th><b>Guitar Controls</b></th>
+                <th><b>Keyboard Controls</b></th>
+            </tr>
+            <tr>
+                <td>D5 - Up</td>
+                <td>W - Up</td>
+            </tr>
+            <tr>
+                <td>E5 - Down</td>
+                <td>S - Down</td>
+            </tr>
+            <tr>
+                <td>G5 - Shoot</td>
+                <td>E - Shoot</td>
+            </tr>
+        </table>
+        <p> <b>Note:</b> Guitar Controls signify which notes are to be played for the given actions. Feel free to have fun and add color and create your own compositions!!</p>
+        </div>
+
+
+
+        <div style="width: 1024px;" >
+        <button class="button" id="start" onclick="startClicked()">Start Game</button>
+        <button class="button" disabled="true" id="b2" onclick="reset()" style="background-color: blue;">Restart</button>
+        <div id="checkbox">
+            <input type="checkbox" id="keyboardInput" name="keyboardInput">
+            <label for="keyboardInput" id="keyboardInputLabel">Keyboard Input</label>
+        </div>
+        </div>
+        <br>
+        <canvas id="canvas"></canvas>   
+        <hr>
+        <br>
+        <h2 style = " font-size: 30px; "><b>Few Last Words:</b></h2>
+        <p>Thank you for playing Guitarist V Zombies. I hope you had fun playing this game. I know there is a lot of room for improvement and I'd like to work on future updates to make the game-feel better and updating the tech behind the scenes. If you have any feedback or suggestions, feel free to reach out to me on my socials.</p>    
+
+        <a href='https://ko-fi.com/dassuramya' target='_blank'><img height='48' style='border:0px;height:48px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+    </div>
+
     <script src="components/audioAnalyzer.js"></script>
     <script src="components/sprite.js"></script>
     <script src="components/bullet.js"></script>
