@@ -10,7 +10,7 @@ This repository contains the code for the game "Guitarist V Zombies". It is a fu
 
 To install and run the game, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/Guitarist-V-Zombies.git`
+1. Clone the repository: `git clone https://github.com/suramyadas01/Guitarist-V-Zombies.git`
 2. Navigate to the project directory: `cd Guitarist-V-Zombies`
 3. Install the dependencies: `npm install`
 4. Start the game: `npm start`
