@@ -17,7 +17,7 @@ To install and run the game, follow these steps:
 
 ## Gameplay
 
-In this game, you control the guitarist character using the arrow keys. Your goal is to defeat as many zombies as possible by playing the correct notes on your guitar. Be careful not to miss any notes, as the zombies will get closer to you!
+In this game, you control the guitarist character using your real guitar. Additionally support has been added for being able to play the game using WASD keys. Your goal is to defeat as many zombies as possible by playing the correct notes on your guitar. Be careful not to miss any notes, as the zombies will get closer to you!
 
 The notes as of now are linked to certain scales so yo can enjoy a bit of freestyling while defeating the zombies. The goal is to have fun.
 
