@@ -78,6 +78,5 @@ The code does have an issue at the moment. When the guitar is played through an 
 
 Contributions are welcome! If you have any ideas, bug reports, or feature requests, please open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+## Credits
+* [PixiVan](https://pixivan.itch.io/) for assets that helped design the background of the game.
