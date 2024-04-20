@@ -1,0 +1,46 @@
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-style: bold;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+
+.button:disabled {
+    background-color: #cccccc;
+}
+.canvas {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    position: relative;
+}
+.canvas iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+p {
+    font-size: 20px;
+}
+
+body{
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: burlywood;
+    vertical-align: middle;
+}
+
+#b2{
+    visibility: hidden;
+}
