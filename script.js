@@ -12,6 +12,28 @@ var cooldown = 0;
 var keyboardInput = document.querySelector('#keyboardInput');
 
 
+var audio = new AudioContext();
+var audioElement
+var audioSource
+var audioIsPlaying = false;
+
+function playAudio() {
+    audioElement = new Audio("assets/backingTrack.mp3");
+    audioSource = audio.createMediaElementSource(audioElement);
+    audioSource.loop = true;
+    audioSource.loopStart = 0;
+    audioSource.loopEnd = 10;
+    audioSource.connect(audio.destination);
+
+
+    audioElement.play();
+}
+function stopAudio() {
+    audioElement.pause();
+    audioElement.currentTime = 0;
+}
+
+
 var score = 0;
 var highScore = 0;
 
@@ -61,8 +83,18 @@ const bg = new Sprite(position, 'assets/bg.png');
 function loop(){
     //console.log(bullets);
     window.requestAnimationFrame(loop);
+    if(audioSource !== undefined && audioIsPlaying){
+   
+        if(audioElement.currentTime > audioElement.duration - 0.1){
+            audioElement.currentTime = 0;
+        }
+    }
 
     if(currentGameState === gameStates[0]){
+
+
+
+
          //Scene Logic
          ctx.clearRect(0, 0, canvas.width, canvas.height);
          bg.draw(ctx);
@@ -74,9 +106,23 @@ function loop(){
 
 
     if(currentGameState === gameStates[1]){
+        //BGAudio Player Logic
+       
+
+        if(audioIsPlaying === false){
+            playAudio();
+            audioIsPlaying = true;
+            console.log('audio is playing');
+        }
+        
+
+
         if(cooldown > 0){
             cooldown--;
         }
+
+         
+    
 
         if(enemyCooldown > 0){
             enemyCooldown--;    
@@ -131,11 +177,12 @@ function loop(){
 
     if(currentGameState === gameStates[2]){
         b2.style.visibility = 'visible';
-        ctx.fillStyle = 'black';
-        ctx.fillRect(canvas.width/2 - 150, canvas.height/2 - 50 , 300 , 100);
-        ctx.fillStyle = 'white';
-        ctx.font = '30px Sans-Serif';
-        ctx.fillText('Game Over', canvas.width/2 - 80, canvas.height/2 + 10);
+        drawGameOver();
+        if(audioIsPlaying === true){
+            stopAudio();
+            audioIsPlaying = false;
+        }
+
     }
     
     ctx.font = '30px Sans-Serif';
@@ -152,16 +199,15 @@ loop();
 
 function drawGameOver(){
     ctx.fillStyle = 'black';
-        ctx.fillRect(canvas.width/2 - 150, canvas.height/2 - 50 , 300 , 100);
-        ctx.fillStyle = 'white';
-        ctx.font = '30px Sans-Serif';
-        ctx.fillText('Game Over', canvas.width/2 - 80, canvas.height/2);
-        ctx.fillText('Press Reset to try again!', canvas.width/2 - 40, canvas.height/2 + 10);
-
-
+    ctx.fillRect(canvas.width/2 - 150, canvas.height/2 - 50 , 300 , 100);
+    ctx.fillStyle = 'white';
+    ctx.font = '30px Sans-Serif';
+    ctx.fillText('Game Over', canvas.width/2 - 80, canvas.height/2);
 }
 
 function reset(){
+    stopAudio();
+    audioIsPlaying = false;
     currentGameState = gameStates[0];
     enemies = [];
     bullets = [];
@@ -231,7 +277,8 @@ function startClicked(){
     Analyzer.setupContext(); 
     startButton.disabled = true;
     b2.disabled = false;
-    b2.style.visibiility = visible;
+    b2.style.visibility = 'visible';
+
 
 }
 

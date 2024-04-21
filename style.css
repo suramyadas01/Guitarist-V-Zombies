@@ -70,7 +70,10 @@ h1{
 
 p {
     font-size: 20px;
+
 }
+
+
 
 body{
     font-family: 'Raleway', sans-serif;
@@ -130,4 +133,29 @@ table {
 span{
     font-size: 24px;
     padding-left: 30px;
+}
+
+#footer{
+    text-align: left;
+    color: rgb(255, 253, 234);
+    font-size: 15px;
+    font-weight: 400;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(28, 29, 39);
+    padding: 20px;
+
+}
+
+#personals{
+    display: inline-block;
+    vertical-align: top;
+    
+}
+
+#kofi{
+    align-self: left;
+    display: inline-block;
+    margin-left: 560px;
+    
 }
