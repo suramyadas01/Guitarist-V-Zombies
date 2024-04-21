@@ -11,13 +11,18 @@ var cooldown = 0;
 
 var keyboardInput = document.querySelector('#keyboardInput');
 
-
-var audio = new AudioContext();
-var audioElement
-var audioSource
+var audio
+var audioElement;
+var audioSource;
 var audioIsPlaying = false;
 
 function playAudio() {
+    try {
+        audio = new AudioContext();
+    } catch (e) {
+        alert("Your browser does not support Web Audio API!");
+        return;
+    }
     audioElement = new Audio("assets/backingTrack.mp3");
     audioSource = audio.createMediaElementSource(audioElement);
     audioSource.loop = true;
