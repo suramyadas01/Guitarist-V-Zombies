@@ -159,3 +159,10 @@ span{
     margin-left: 560px;
     
 }
+
+#feedBack{
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 20px;
+    background-color: rgb(233, 123, 160);
+}

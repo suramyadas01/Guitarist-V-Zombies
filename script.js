@@ -187,7 +187,7 @@ function loop(){
     
     ctx.font = '30px Sans-Serif';
     ctx.fillStyle = 'black';
-    ctx.fillRect(0, 0, 220, 100);
+    ctx.fillRect(0, 0, 260, 100);
     ctx.fillStyle = 'white';
     ctx.fillText('Score: ' + score, 20, 50);
     ctx.fillText('High Score: ' + highScore, 20, 80);
