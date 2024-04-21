@@ -13,35 +13,16 @@ class AudioAnalyzer {
     const source = this.audioContext.createMediaStreamSource(stream)
     source
     .connect(this.analyzer)
-      .connect(this.audioContext.destination)
+   
       
       
     }
+
+    async closeContext() {
+      this.audioContext.close()
+    }
   
 
-
-    
- rxx(l, N, x) {
-  var sum = 0;
-  for (var n = 0; n <= N - l - 1; n++) {
-    sum += (x[n] * x [n + l])
-  }
-  return sum;
-}
-
- autocorrelationWithShiftingLag(samples) {
-  var autocorrelation = []
-  for (var lag = 0; lag < samples.length; lag++) {
-    autocorrelation[lag] = this.rxx(lag, samples.length, samples)
-  }
-  return autocorrelation
-}
-
- maxAbsoluteScaling(data) {
-  var xMax = Math.abs(Math.max(...data))
-  return data.map(x => x / xMax)
-}
-   
 
    getAudioSource() {
     if (navigator.getUserMedia = ( navigator.getUserMedia    || navigator.webkitGetUserMedia ||

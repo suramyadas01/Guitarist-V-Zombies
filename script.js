@@ -178,6 +178,7 @@ function loop(){
     if(currentGameState === gameStates[2]){
         b2.style.visibility = 'visible';
         drawGameOver();
+        Analyzer.closeContext();
         if(audioIsPlaying === true){
             stopAudio();
             audioIsPlaying = false;
@@ -206,6 +207,7 @@ function drawGameOver(){
 }
 
 function reset(){
+    Analyzer.closeContext();
     stopAudio();
     audioIsPlaying = false;
     currentGameState = gameStates[0];
